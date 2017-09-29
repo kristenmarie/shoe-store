@@ -55,11 +55,11 @@ This web application allows users to add, update, delete and list shoe stores. T
 * _In web browser of choice copy and paste the following into the address field :_ ```http://localhost:4567/```
 
 
-## Known Bugs
+## 🐛Known Bugs🐛
 
 _There are no known bugs at this time._
 
-## Support and contact details
+## 📧Support and contact details📧
 
 _Feel free to contact me at kristen.m.kulha@gmail.com_
 
