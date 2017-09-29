@@ -71,3 +71,15 @@ post('/add-association') do
   Association.create({brand_id: params.fetch("brand_id"), store_id: params.fetch("store_id")})
   erb(:success)
 end
+
+get('/brands/:id/edit') do
+  @section = 'brands'
+  @brand = Brand.find(params[:id])
+  erb(:edit_brand)
+end
+
+patch('/update-brand') do
+  brand = Brand.find(params.fetch("brand_id").to_i)
+  brand.update({name: params.fetch("name")})
+  redirect '/brands'
+end
