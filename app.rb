@@ -94,3 +94,26 @@ delete('/brands/:id/delete') do
     @error_type = brand
   end
 end
+
+get('/stores/:id/edit') do
+  @section = 'stores'
+  @store = Store.find(params[:id])
+  erb(:edit_store)
+end
+
+patch('/update-store') do
+  @section = 'stores'
+  Store = Store.find(params.fetch("brand_id").to_i)
+  store.update({name: params.fetch("name")})
+  redirect '/stores'
+end
+
+delete('/stores/:id/delete') do
+  @section = 'stores'
+  store = Store.find(params[:id])
+  if store.delete
+    redirect 'stores'
+  else
+    @error_type = store
+  end
+end

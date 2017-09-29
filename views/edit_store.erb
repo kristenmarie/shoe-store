@@ -1,0 +1,15 @@
+<h2>Edit <%= @store.name %> <form action="/stores/<%= @store.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="button" class="btn btn-danger">Delete</button>
+</form></h2>
+
+
+<form action="/update-store" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="store_id" value="<%= @store.id %>">
+  <div class="form-group">
+    <label for="price">Name</label>
+    <input type="text" name="name" class="form-control">
+  </div>
+  <button type="submit" name="button" class="btn btn-success">Update Store</button>
+</form>
