@@ -1,4 +1,7 @@
-<h2>Edit <%= @brand.name %> </h2>
+<h2>Edit <%= @brand.name %> <form action="/brands/<%= @brand.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="button" class="btn btn-danger">Delete</button>
+</form></h2>
 
 
 <form action="/update-brand" method="post">

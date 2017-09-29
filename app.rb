@@ -79,7 +79,18 @@ get('/brands/:id/edit') do
 end
 
 patch('/update-brand') do
+  @section = 'brands'
   brand = Brand.find(params.fetch("brand_id").to_i)
   brand.update({price: params.fetch("price")})
   redirect '/brands'
+end
+
+delete('/brands/:id/delete') do
+  @section = 'brands'
+  brand = Brand.find(params[:id])
+  if brand.delete
+    redirect 'brands'
+  else
+    @error_type = brand
+  end
 end
