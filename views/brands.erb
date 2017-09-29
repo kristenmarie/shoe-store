@@ -1,0 +1,13 @@
+<h2>Here is a dandy list of all the brands currently in the database:</h2>
+
+<p>Click on a brand to view its detail page along with the retailers that carry it.</p>
+
+<% if @brands.any? %>
+  <ul>
+    <% @brands.each do |brand| %>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no brands in the database!</p>
+<% end %>
