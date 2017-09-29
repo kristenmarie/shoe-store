@@ -1,0 +1,54 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url("../img/bg.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.container {
+  max-width: 700px;
+  margin-left: 5%;
+  background-color: rgba(105, 105, 105, 0.59);
+  border-radius: 6px;
+  padding-bottom: 15px;
+}
+
+h1, h2, h3 {
+  font-family: 'Arvo', serif;
+  color: white;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+form {
+  max-width: 300px;
+}
+
+ul.nav-tabs {
+  border-bottom: 1px solid #eee;
+}
+
+.ticket-details p {
+  color: #888888;
+}
+
+strong {
+  color: black
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #9ACD32;
+}
+
+#welcome {
+  text-align: center;
+  font-size: 30px;
+}
