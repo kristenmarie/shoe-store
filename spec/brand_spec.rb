@@ -35,5 +35,10 @@ describe('Brand') do
         brand = Brand.create(name: "wooley walkers", price: '40')
         expect(brand.name).to(eq("Wooley Walkers"))
       end
+
+      it("will not capitalize words that should remain lowercase") do
+        brand = Brand.create(name: "wooley and walkers", price: '40')
+        expect(brand.name).to(eq("Wooley and Walkers"))
+      end
     end
 end

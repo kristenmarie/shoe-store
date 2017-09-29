@@ -8,8 +8,17 @@ class Brand < ActiveRecord::Base
   private
 
   def capitalize_brand
+    non_capitals = ["a", "an", "the", "and", "at", "by"]
+    capitalized = []
     name = self.name.split(" ")
-    self.name = name.map{ |word| word.capitalize }.join(" ")
+    name.map do |word|
+      if !non_capitals.include?(word)
+        capitalized.push(word.capitalize)
+      else
+        capitalized.push(word)
+      end
+    end
+    self.name = capitalized.join(" ")
   end
 
   def currency_convert

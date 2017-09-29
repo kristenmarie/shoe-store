@@ -14,7 +14,7 @@ This web application allows users to add, update, delete and list shoe stores. T
   * Example output: Show superstore
 * Entered prices should be changed to currency format
   * Example input: 50
-  * Example output: 50.00
+  * Example output: $50.00
 * All stores and brands are unique, no two entries are the same
   * Example input: Adidas
   * Example output: "This brand is already in the database!"
@@ -24,6 +24,12 @@ This web application allows users to add, update, delete and list shoe stores. T
 * Stores and shoe brands can't be saved with a blank name
   * Example input: ""
   * Example output: Name field cannot be left blank.
+* Brand and Store names cannot contain offensive language
+  * Example input: curmudgeon
+  * Example output: Name is reserved
+* Will not capitalize words in names that should remain lowercase.
+  * Example input: wooley and walkers
+  * Example output: Wooley and Walkers
 
 ## Setup/Installation Requirements
 
