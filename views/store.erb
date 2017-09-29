@@ -1,0 +1,30 @@
+<h2> <%= @store.name %>  </h2>
+
+<h3><%= @store.name %> currently carries these brands: </h3>
+
+<% if @store.brands.any? %>
+  <ul>
+    <% @store.brands.each do |brand| %>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This store currently does not carry any brands.</p>
+<% end %>
+
+<h3>Add a brand to <%= @store.name %>:</h3>
+<form action="/add-association" method="post">
+  <input type="hidden" name="store_id" value="<%= @store.id %>">
+  <div class="form-group">
+    <% if @brands.any? %>
+      <select class="form-control" name="brand_id">
+        <% @brands.each do |brand| %>
+          <option value="<%= brand.id %>"><%= brand.name %></option>
+        <% end %>
+      </select>
+    <% else %>
+      <p>There are currently no brands.</p>
+    <% end %>
+  </div>
+  <button type="submit" name="button" class="btn btn-success">Add a Brand</button>
+</form>
