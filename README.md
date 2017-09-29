@@ -1,5 +1,7 @@
 # _Shoe Store_
 
+![image](https://user-images.githubusercontent.com/15882954/31039693-9b9853e2-a534-11e7-9ae5-82fc5e099620.jpg)
+
 #### _An application to track shoe brands and stores they are in!_
 
 #### By _**Kristen Marie Kulha**_
