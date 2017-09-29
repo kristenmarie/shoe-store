@@ -13,4 +13,11 @@ describe('Brand') do
       expect(brand.save).to(eq(false))
     end
   end
+
+    describe("#capitalize_brand") do
+      it("capitalizes first letter in each word of brand") do
+        brand = Brand.create(name: "wooley walkers", price: 40)
+        expect(brand.name).to(eq("Wooley Walkers"))
+      end
+    end
 end

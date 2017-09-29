@@ -12,4 +12,11 @@ describe('Store') do
       expect(store.save).to(eq(false))
     end
   end
+
+  describe("#capitalize_store") do
+    it("capitalizes first letter in each word of store name") do
+      store = Store.create(name: "wellies unlimited")
+      expect(store.name).to(eq("Wellies Unlimited"))
+    end
+  end
 end
