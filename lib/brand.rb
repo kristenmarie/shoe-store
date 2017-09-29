@@ -1,6 +1,7 @@
 class Brand < ActiveRecord::Base
   has_and_belongs_to_many :stores
   validates :name, presence: true, uniqueness: { case_sensitive: false }, length: {maximum: 100}, :exclusion => { :in => %w(clodhopper lout curmudgeon), case_sensitive:false }
+  validates :price, presence: true
   before_save :capitalize_brand, :currency_convert
 
 
@@ -22,6 +23,6 @@ class Brand < ActiveRecord::Base
   end
 
   def currency_convert
-    self.price = '$' + self.price + ".00"
+    self.price = '$%.2f' % self.price
   end
 end

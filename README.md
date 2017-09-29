@@ -21,7 +21,7 @@ This web application allows users to add, update, delete and list shoe stores. T
 * Store and brand names have a max of 100 characters
   * Example input: This is a really long store name that is completely unnecessary but it is for testing purposes!! :)
   * Example output: "Store names cannot exceed 100 characters"
-* Stores and shoe brands can't be saved with a blank name
+* Stores and shoe brands can't be created with a blank name
   * Example input: ""
   * Example output: Name field cannot be left blank.
 * Brand and Store names cannot contain offensive language
@@ -30,6 +30,9 @@ This web application allows users to add, update, delete and list shoe stores. T
 * Will not capitalize words in names that should remain lowercase.
   * Example input: wooley and walkers
   * Example output: Wooley and Walkers
+* Brands can't be created without a price
+  * Example price input: nil
+  * Example output: Price can't be blank
 
 ## Setup/Installation Requirements
 
