@@ -1,6 +1,5 @@
 class Brand < ActiveRecord::Base
-  has_many :associations
-  has_many :stores, through: :associations
+  has_and_belongs_to_many :stores
   validates :name, presence: true, length: {maximum: 100}
   before_save :capitalize_brand
 
