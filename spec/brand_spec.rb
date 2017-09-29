@@ -23,6 +23,11 @@ describe('Brand') do
       brand = Brand.create({name: "wooley walkers", price: '90'})
       expect(brand.price).to(eq('$90.00'))
     end
+
+    it('name cannot contain offensive language') do
+      brand = Brand.new({name: "curmudgeon", price: '90'})
+      expect(brand.save).to(eq(false))
+    end
   end
 
     describe("#capitalize_brand") do
