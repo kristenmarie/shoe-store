@@ -1,0 +1,22 @@
+<h2> <%= @brand.name %>  </h2>
+
+<p><strong>Price: </strong> $<%= @brand.price %>.00 </p>
+
+<h3>Stores currently carrying <%= @brand.name %> </h3>
+
+<% if @brand.stores.any? %>
+  <ul>
+    <% @brand.stores.each do |store| %>
+      <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This brand is currently not in any stores.</p>
+<% end %>
+
+<h3>Add <%= @brand.name %> to a store:</h3>
+<form action="/add-relationship" method="post">
+  <div class="form-group">
+
+  </div>
+</form>

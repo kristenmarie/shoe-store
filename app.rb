@@ -51,3 +51,8 @@ post('/add_store') do
     erb(:errors)
   end
 end
+
+get('/brands/:id') do
+  @brand = Brand.find(params[:id].to_i)
+  erb(:brand)
+end

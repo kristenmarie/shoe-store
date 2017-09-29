@@ -1,3 +1,4 @@
 class Store < ActiveRecord::Base
-  has_many :brands, through: :brands_stores
+  has_many :associations
+  has_many :brands, through: :associations
 end
