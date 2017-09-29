@@ -80,6 +80,6 @@ end
 
 patch('/update-brand') do
   brand = Brand.find(params.fetch("brand_id").to_i)
-  brand.update({name: params.fetch("name")})
+  brand.update({price: params.fetch("price")})
   redirect '/brands'
 end
