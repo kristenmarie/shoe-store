@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" charset="utf-8"></script> -->
+
+    </script>
+    <title>Shoe Store</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Shoe Store Distribution</h1>
+      </div>
+      <ul class="nav nav-tabs">
+        <li class="<%= @section == 'home' ? 'active' : nil %>"><a href="/">Home</a></li>
+        <li class="<%= @section == 'stores' ? 'active' : nil %>"><a href="/stores">Stores</a></li>
+        <li class="<%= @section == 'brands' ? 'active' : nil %>"><a href="/brands">Brands</a></li>
+        <li class="<%= @section == 'add-store' ? 'active' : nil %>"><a href="/store_form">Add Store</a></li>
+        <li class="<%= @section == 'add-brand' ? 'active' : nil %>"><a href="/brand_form">Add Brand</a></li>
+      </ul>
+      <%= yield %>
+    </div>
+  </body>
+</html>
