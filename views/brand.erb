@@ -15,8 +15,18 @@
 <% end %>
 
 <h3>Add <%= @brand.name %> to a store:</h3>
-<form action="/add-relationship" method="post">
+<form action="/add-association" method="post">
+  <input type="hidden" name="brand_id" value="<%= @brand.id %>">
   <div class="form-group">
-
+    <% if @stores.any? %>
+      <select class="form-control" name="store_id">
+        <% @stores.each do |store| %>
+          <option value="<%= store.id %>"><%= store.name %></option>
+        <% end %>
+      </select>
+    <% else %>
+      <p>There are currently no stores.</p>
+    <% end %>
   </div>
+  <button type="submit" name="button" class="btn btn-success">Add to Store</button>
 </form>

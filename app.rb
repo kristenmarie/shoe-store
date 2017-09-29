@@ -53,6 +53,14 @@ post('/add_store') do
 end
 
 get('/brands/:id') do
+  @section = 'brands'
+  @stores = Store.all
   @brand = Brand.find(params[:id].to_i)
   erb(:brand)
+end
+
+post('/add-association') do
+  @section = 'home'
+  Association.create({brand_id: params.fetch("brand_id"), store_id: params.fetch("store_id")})
+  erb(:success)
 end
