@@ -23,5 +23,10 @@ describe('Store') do
       store = Store.create(name: "wellies unlimited")
       expect(store.name).to(eq("Wellies Unlimited"))
     end
+
+    it("will not capitalize words that should remain lowercase") do
+      store = Store.create(name: "smith and mason")
+      expect(store.name).to(eq("Smith and Mason"))
+    end
   end
 end
