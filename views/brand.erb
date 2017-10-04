@@ -17,7 +17,7 @@
 <% end %>
 
 <h3>Add <%= @brand.name %> to a store:</h3>
-<form action="/add-association" method="post">
+<form action="/add-store-association" method="post">
   <input type="hidden" name="brand_id" value="<%= @brand.id %>">
   <div class="form-group">
     <% if @stores.any? %>
